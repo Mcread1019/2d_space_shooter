@@ -16,4 +16,10 @@ public class enimy : MonoBehaviour
     {
         transform.position -= new Vector3(0,speed,0)*Time.deltaTime;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+        Destroy(collision.gameObject);
+    }
 }
