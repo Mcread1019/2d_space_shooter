@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,9 +7,12 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     int score = 0;
+    bool isGameover = false;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] GameObject gameOverText;
 
     public static gameManager instance;
+   
 
     private void Awake()
     {
@@ -31,5 +35,10 @@ public class gameManager : MonoBehaviour
     {
         score+= amount;
         scoreText.text = "Score: " + score;
+    }
+    public void InstitateGameover()
+    {
+        isGameover = true;
+        gameOverText.SetActive(true);
     }
 }

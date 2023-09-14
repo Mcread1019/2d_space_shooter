@@ -6,6 +6,7 @@ public class spawner : MonoBehaviour
 {
     [SerializeField] float spawnrate = 2f;
     [SerializeField] GameObject enemyPrefab;
+    
 
     float Xmin;
     float Xmax;

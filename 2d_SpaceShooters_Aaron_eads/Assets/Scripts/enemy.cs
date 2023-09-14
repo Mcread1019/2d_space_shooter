@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class enimy : MonoBehaviour
@@ -20,7 +21,14 @@ public class enimy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameManager.instance.IncreaseScore(10);
+        if (collision.gameObject.tag == "Player")
+        {
+            gameManager.instance.InstitateGameover();
+        }
+        else
+        {
+            gameManager.instance.IncreaseScore(10);
+        }
         Destroy(gameObject);
         Destroy(collision.gameObject);
     }
